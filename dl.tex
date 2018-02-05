@@ -1,0 +1,107 @@
+% Created 2018-02-05 Mon 20:57
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\author{Daniel Guimaraes}
+\date{\today}
+\title{Description Logic}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 25.1.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{7 - Query Answering}
+\label{sec-1}
+\subsection{Query Answering in Databases \\}
+\label{sec-1-1}
+\subsubsection{Database \\}
+\label{sec-1-1-1}
+    A finite collection of related data which has some inherent 
+meaning. The main difference between data and knowledge bases is that 
+while the former concentrate on \textit\{manipulating large and 
+persistent models of relatively simple data\}, the latter provide 
+more support for \textit{inference—finding answers} about the model 
+which had not been explicitly told to it—and involve fewer but more 
+complex data. In DL database can bes seen as a finite interpretation
+under a domain $\Delta^{\mathcal{I}}$ together with relations 
+interpreting the relation symbols.
+\subsubsection{SQL query \\}
+\label{sec-1-1-2}
+    We restrict the attention to unary and binary relation symbols 
+corresponding to concepts and roles in DLs. We give the definitions
+for arbitrary interpretations not only finite ones.
+    Describe answer tuples, same expressiveness as FO formula, with 
+free variables (answer variables).
+\begin{enumerate}
+\item Def 7.1: (First Order Query) \\
+\label{sec-1-1-2-1}
+     Is a first order formula that uses only unary and binary 
+predicates (concept and role names), and no function symbols or 
+constants. The use of equality is allowed!\\
+     The free variables $\overset{\to}{x}$ of an FO query 
+$q(\overset{\to}{x})$ are called answer variables. The arity of 
+$q(\overset{\to}{x})$ is the number of answer variables.\\
+Let $q(\overset{\to}{x})$ be a FO query of arity k, and $\mathcal{I}$
+an interpretation. We say that:
+\begin{center}
+$q(\overset{\to}{a})$ = $a_{1}, ..., a_{k}$ is an answer to q on 
+$\mathcal{I}$ if $\mathcal{I} \models q[\overset{\to}{a}]$\\
+\end{center}
+i.e. if $q[\overset{\to}{a}]$ evaluates to true in $\mathcal{I}$ under 
+the valuation that interprets the answer variables $\overset{\to}{a}$ 
+to the constants $a_{1}, ..., a_{k}$. The set of all answers to q 
+on $\mathcal{I}$ can be denoted as $ans(q,\mathcal{I})$ 
+
+\item Def 7.2 (conjuntive query):\\
+\label{sec-1-1-2-2}
+     A conjunctive query q has the form:\\
+     $\exists$ x$_{\text{1}}$, \ldots{}, $\exists$ x$_{\text{k}}$ $\alpha$$_{\text{1}}$ \and \ldots{} 
+     $\alpha$$_{\text{n}}$\\
+     where k >= 0, n >=1 and $\alpha_{i}$ is a concept atom $A(x)$ or a 
+role atom $r(x,y)$ with $A \in \mathbf(C)$, $r \in \mathbf{R}$, and 
+x,y are variables. The xs are que quantified variables and the rest
+are the answered variables.\\
+
+\item Def 7.3 ($\overset{\to}{a}-match$):\\
+\label{sec-1-1-2-3}
+Let q be a conjunctie query and $\mathcal{I}$ an interpretation.\\
+     We use $var(q)$ to denote the set of all variables in q.\\
+
+A match of q in $\mathcal{I}$ is a mapping: $\pi: var(q) \to 
+\Delta^{\mathcal{I}}$ such that:
+\begin{itemize}
+  \item $\pi(x) \in A^{\mathcal{I}}$ for all concept atoms $A(x)$ in q
+  \item $(\pi(x),\pi(y)) \in r^{\mathcal{I}}$ for all role atoms 
+r(x,y) in q.
+\end{itemize}
+\end{enumerate}
+
+
+
+
+
+
+
+
+\subsection{Ontology-mediated Query Answering}
+\label{sec-1-2}
+% Emacs 25.1.1 (Org mode 8.2.10)
+\end{document}
