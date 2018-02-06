@@ -1,4 +1,4 @@
-% Created 2018-02-06 Tue 14:41
+% Created 2018-02-06 Tue 17:56
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -135,38 +135,9 @@ $E(x_{4},x_{5}) \land E(x_{5},x_{6})$ & $(green,blue), (blue,green)\}$ \\
 \begin{center}
 $\mathcal{I} \models$ q iff G is 3-colorable\\
 \end{center}
-Proof:\\
-     (=>) Assume that G is 3-colorable and let $c:V \to \{red,blue,green\}$
-be the coloring. Let $\mathcal{I}_{c}$ be the interpretation with:\\
-     $\Delta$$^{\mathcal{I}_{\text{c}}}$ = V, $v^{\mathcal{I}_{c}}$ = v for all $v \in V$. \\
-     r$^{\mathcal{I}_{c}}$ = \$\{(u,v) | \{u,v\} $\in$ E\}\$\\
-     R$^{\mathcal{I}_{c}}$ = \{v $\in$ V | c(v)=red \}\\
-     B$^{\mathcal{I}_{c}}$ = \{v $\in$ V | c(v)=blue \}\\
-     G$^{\mathcal{I}_{c}}$ = \{v $\in$ V | c(v)=green \}\\
-     D$^{\mathcal{I}_{\text{c}}}$ = 0\\
-     Then $\mathcal{I}_{c}$ is a model for $\mathcal{T}$ and $\mathcal{A}_{G}$
-but $\mathcal{T}_{c} \not \models q$ thus $\mathcal{T}$ and 
-$\mathcal{A}_{G} \not \models q$ \\
-     (<=) Assume that $(\mathcal{T},\mathcal{A_{G}}) \not \models q$ then
-there is a model of $\mathcal{T}$ and $\mathcal{A_{G}}$ s.t. 
-$\mathcal{I} \not \models q$. This obviously means that 
-$D^{\mathcal{I}} = 0$. We define the mapping:\\
-\begin{center}
-$C_{\mathcal{I}}(v)$ = 
-\begin{enumerate}
-\item red if $v^{\mathcal{I}} \in R^{\mathcal{I}}$, otherwise
-\item blue if $v^{\mathcal{I}} \in B^{\mathcal{I}}$, otherwise
-\item green if $v^{\mathcal{I}} \in G^{\mathcal{I}}$
-\end{enumerate}
-\end{center}
-Claim: $C_{\mathcal{I}}$ is a coloring of G: \\
-     Let $(u,v) \in E$ and assume that $C_{\mathcal{I}}(u)$ = $C_{\mathcal{I}}(v)$ 
-then $(u^{\mathcal{I}},v^{\mathcal{I}}) \in r^{\mathcal{I}}$ and 
-$u^{\mathcal{I}}$ belongs to one of the concepts: \\
-     R $\sqcap \exists$ r. R, B $\sqcap \exists$ r. B, G $\sqcap \exists$ r. G \\
 \end{enumerate}
 
-\subsection{Ontology-mediated Query Answering}
+\subsection{Ontology-mediated Query Answering \\}
 \label{sec-1-2}
 In OMQA we consider:
 \begin{itemize}
@@ -238,12 +209,42 @@ to answering FO queries on a knowledge bases (with an empty TBox)
 and thus answers to FO queries on knowledge bases are uncomputable.
 \item Proposition 7.11 (data complexity of OMQA in $\mathcal{A}\mathcal{L}\mathcal{C}$) \\
 \label{sec-1-2-2-2-2}
-In $\mathcal{A}\mathcal{L}\mathcal{C}$ the query entailment
-problem for conjunctive queries is coNP-hard w.r.t. \textit\{data 
-complexity\}. TBox and the query are constant, the input graph
-is translated into the ABox $\mathcal{A}_{G}$ = $\{(u,v):r | \{u,v\}\in E\}$
-We have that $(\mathcal{T},\mathcal{A_{G}}) \models q$ iff G is not 3-colorable.
-Proof: \ldots{}
+  In $\mathcal{A}\mathcal{L}\mathcal{C}$ the query entailment
+  problem for conjunctive queries is coNP-hard w.r.t. \textit{data complexity}. 
+  TBox and the query are constant, the input graph is translated 
+  into the ABox $\mathcal{A}_{G}$ = $\{(u,v):r | \{u,v\}\in E\}$
+  We have that $(\mathcal{T},\mathcal{A_{G}}) \models q$ 
+  iff G is not 3-colorable.
+  Proof:\\
+     (=>) Assume that G is 3-colorable and let $c:V \to \{red,blue,green\}$
+be the coloring. Let $\mathcal{I}_{c}$ be the interpretation with:\\
+     $\Delta$$^{\mathcal{I}_{\text{c}}}$ = V, $v^{\mathcal{I}_{c}}$ = v for all $v \in V$. \\
+     r$^{\mathcal{I}_{c}}$ = \$\{(u,v) | \{u,v\} $\in$ E\}\$\\
+     R$^{\mathcal{I}_{c}}$ = \{v $\in$ V | c(v)=red \}\\
+     B$^{\mathcal{I}_{c}}$ = \{v $\in$ V | c(v)=blue \}\\
+     G$^{\mathcal{I}_{c}}$ = \{v $\in$ V | c(v)=green \}\\
+     D$^{\mathcal{I}_{\text{c}}}$ = 0\\
+     Then $\mathcal{I}_{c}$ is a model for $\mathcal{T}$ and $\mathcal{A}_{G}$
+but $\mathcal{T}_{c} \not \models q$ thus $\mathcal{T}$ and 
+$\mathcal{A}_{G} \not \models q$ \\
+     (<=) Assume that $(\mathcal{T},\mathcal{A_{G}}) \not \models q$ then
+there is a model of $\mathcal{T}$ and $\mathcal{A_{G}}$ s.t. 
+$\mathcal{I} \not \models q$. This obviously means that 
+$D^{\mathcal{I}} = 0$. We define the mapping:\\
+\begin{center}
+$C_{\mathcal{I}}(v)$ = 
+\begin{enumerate}
+\item red if $v^{\mathcal{I}} \in R^{\mathcal{I}}$, otherwise
+\item blue if $v^{\mathcal{I}} \in B^{\mathcal{I}}$, otherwise
+\item green if $v^{\mathcal{I}} \in G^{\mathcal{I}}$
+\end{enumerate}
+\end{center}
+Claim: $C_{\mathcal{I}}$ is a coloring of G: \\
+     Let $(u,v) \in E$ and assume that $C_{\mathcal{I}}(u)$ = $C_{\mathcal{I}}(v)$ 
+then $(u^{\mathcal{I}},v^{\mathcal{I}}) \in r^{\mathcal{I}}$ and 
+$u^{\mathcal{I}}$ belongs to one of the concepts: \\
+     R $\sqcap \exists$ r. R, B $\sqcap \exists$ r. B, G $\sqcap \exists$ r. G \\
+
 \item Proposition 7.12  (data complexity of OMQA in $\mathcal{E}\mathcal{L}$) \\
 \label{sec-1-2-2-2-3}
 In $\mathcal{E}\mathcal{L}$ the query entailment problem for 
@@ -262,8 +263,18 @@ The set of accessible node of P is the smallest set of nodes s.t.
 \begin{itemize}
 \item every element of S is acessible.
 \item if $n_{1}, n_{2}$ are accessible and $(n,n_{1}, n_{2})$ then n 
-is accessible.
+is accessible.\\
 \end{itemize}
+So given a path system P = (N,E,S,t), is t accessible?
+Proof: (By LogSpace-reduction of path system accessibility)
+The reduction:
+(Data complexity implies $\mathcal{T}$ and $q$ shoulb be fixed)
+$\mathcal{T} = \{\exists P_{1}. A \sqsubseteq B_{1}\}$
+$q = A(x)$
+$\mathcal{A} = \{ A(n)| n \in S\} \cup$ \\
+      $\{P_{1}(e,j), P_{2}(e,k), P_{3}(n,e) | e=(n,j,k) \in E\}$
+We have $(\mathcal{T},\mathcal{A}) \models A(t)$ 
+iff t is accessible in P.
 \end{enumerate}
 \end{enumerate}
 % Emacs 25.1.1 (Org mode 8.2.10)
