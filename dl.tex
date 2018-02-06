@@ -1,4 +1,4 @@
-% Created 2018-02-06 Tue 17:56
+% Created 2018-02-06 Tue 18:45
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -30,9 +30,9 @@
 
 \section{7 - Query Answering}
 \label{sec-1}
-\subsection{Query Answering in Databases \\}
+\subsection{Query Answering in Databases}
 \label{sec-1-1}
-\subsubsection{Database \\}
+\subsubsection{Database}
 \label{sec-1-1-1}
 A finite collection of related data which has some inherent 
 meaning. The main difference between data and knowledge bases is that 
@@ -43,7 +43,7 @@ which had not been explicitly told to it—and involve fewer but more
 complex data. In DL database can bes seen as a finite interpretation
 under a domain $\Delta^{\mathcal{I}}$ together with relations 
 interpreting the relation symbols.
-\subsubsection{SQL query \\}
+\subsubsection{SQL query}
 \label{sec-1-1-2}
 We restrict the attention to unary and binary relation symbols 
 corresponding to concepts and roles in DLs. We give the definitions
@@ -103,9 +103,16 @@ if $\pi(x_{i})$ = a$_{\text{i}}^{\mathcal{I}}$ for 1 $\le$ i $\le$ k.
 $ans(q,\mathcal{I})$ = $\{ \overset{\to}{a} |$ there is an 
 $\overset{\to}{a}-match$ of q in $\mathcal{I} \}$
 \end{enumerate}
-
 \subsubsection{Complexity}
 \label{sec-1-1-3}
+The objective of this part is mainly to show that conjunctive 
+query entailment in Databases is NP-complete, since is is NP and
+NP-hard. The fact that is NP is trivially shown by an solution to 
+the problem which can be verified polynomial time. It also shows 
+the hardness result by reducing the conjunctive query answering 
+to a 3-colorability problem which is a clasical NP problem.
+It is shown that this result can be improved by fixing the TBox
+and the query to a fixed size we get $AC^{0}$
 \begin{enumerate}
 \item Def 7.5 (query entailment)
 \label{sec-1-1-3-1}
@@ -137,7 +144,7 @@ $\mathcal{I} \models$ q iff G is 3-colorable\\
 \end{center}
 \end{enumerate}
 
-\subsection{Ontology-mediated Query Answering \\}
+\subsection{Ontology-mediated Query Answering}
 \label{sec-1-2}
 In OMQA we consider:
 \begin{itemize}
@@ -182,6 +189,17 @@ $\mathcal{T} \cup \mathcal{A} \models q(\overset{\to}{a})$.
 
 \subsubsection{Complexity}
 \label{sec-1-2-2}
+The objective of this session is to show how to reduce the 
+complexity of FO query entailment of OMQA it is undecidable. 
+Because we can reduce satisfiability of FO formulas to query to
+answering FO queries on a knowledge base. To reduce this undecidable
+result it is shown that for $\mathcal{A}\mathcal{L}\mathcal{C}$,
+we consider only conjunctive queries and fix the size TBox and the 
+query and consider only the ABox as input, and get coNP-hard result 
+by reduction to non-3-colorability.
+It is also presented that conjunctive query entailment for 
+$\mathcal{E}\mathcal{L}$ is P-hard by providing a LogSpace-reduction 
+to path system accessiblity.
 \begin{enumerate}
 \item Def 7.10 (OMQA query entailment) \\
 \label{sec-1-2-2-1}
@@ -200,14 +218,14 @@ assume that the Tbox and the query have constant size.\\
      The complexity of OMQA query entailment of course depends on the 
 query language and which DL for formulating the KB are used.
 \begin{enumerate}
-\item Query Language \\
+\item Query Language
 \label{sec-1-2-2-2-1}
 We consider only conjunctive queries.
 In fact, for FO queries, OMQA query entailment would be 
 undecidable. It is not hard to reduce satisfiability of FO formulas
 to answering FO queries on a knowledge bases (with an empty TBox)
 and thus answers to FO queries on knowledge bases are uncomputable.
-\item Proposition 7.11 (data complexity of OMQA in $\mathcal{A}\mathcal{L}\mathcal{C}$) \\
+\item Proposition 7.11 (data complexity of OMQA in $\mathcal{A}\mathcal{L}\mathcal{C}$)
 \label{sec-1-2-2-2-2}
   In $\mathcal{A}\mathcal{L}\mathcal{C}$ the query entailment
   problem for conjunctive queries is coNP-hard w.r.t. \textit{data complexity}. 
